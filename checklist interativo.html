@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist de Segurança - Enigma</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f4f4f4; color: #333;
+  }
+  .container {
+    max-width: 800px; margin: 40px auto;
+    background: #fff; padding: 24px;
+    border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  h1, h2 {
+    text-align: center; margin-bottom: 16px;
+  }
+  h2 {
+    margin-top: 32px;
+  }
+  ul {
+    list-style: none; padding-left: 0;
+  }
+  li {
+    margin-bottom: 10px; display: flex; align-items: center;
+  }
+  input[type="checkbox"] {
+    margin-right: 12px; transform: scale(1.2);
+  }
+  .section {
+    border-top: 1px solid #ddd; padding-top: 16px; margin-top: 16px;
+  }
+  .footer {
+    margin-top: 24px; font-size: 14px; color: #555; text-align: center;
+  }
+  button {
+    display: block; margin: 20px auto 0;
+    padding: 10px 20px; font-size: 16px;
+    border: none; border-radius: 6px;
+    background: #000; color: #fff; cursor: pointer;
+  }
+  button:hover {
+    background: #333;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📋 Checklist de Segurança - Enigma</h1>
+
+  <div class="section">
+    <h2>Antes de Usar (2 minutos)</h2>
+    <ul>
+      <li><input type="checkbox"> Gerar par de chaves em dispositivo seguro</li>
+      <li><input type="checkbox"> Exportar chave pública e enviar por canal verificado</li>
+      <li><input type="checkbox"> Receber e verificar fingerprint do contato antes de importar</li>
+      <li><input type="checkbox"> Testar com mensagem curta e verificar assinatura/descriptografia</li>
+      <li><input type="checkbox"> Fazer backup cifrado das chaves privadas (opcional)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Checklist Diário / Por Sessão</h2>
+    <ul>
+      <li><input type="checkbox"> Bloquear tela quando ausentar</li>
+      <li><input type="checkbox"> Fechar abas e limpar clipboard/localStorage em PCs públicos</li>
+      <li><input type="checkbox"> Verificar fingerprint do peer se algo mudar</li>
+      <li><input type="checkbox"> Atualizar navegador e reiniciar após patch de segurança</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Medidas Avançadas (Opcional)</h2>
+    <ul>
+      <li><input type="checkbox"> Usar hardware security module / YubiKey / Smartcard</li>
+      <li><input type="checkbox"> Integrar verificação de identidade via canal PKI/Certificado</li>
+      <li><input type="checkbox"> Configurar CSP, SRI e servir via HTTPS se hospedar o index.html</li>
+      <li><input type="checkbox"> Considerar sistema client+server com autenticação mútua</li>
+    </ul>
+  </div>
+
+  <button onclick="resetChecklist()">🔄 Resetar Checklist</button>
+
+  <div class="footer">
+    Use este checklist sempre antes de enviar ou receber mensagens. Pequenos cuidados evitam grandes problemas.
+  </div>
+</div>
+
+<script>
+function resetChecklist() {
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+  alert('Checklist resetado!');
+}
+</script>
+</body>
+</html>

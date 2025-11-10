@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Boas Práticas - Enigma Seguro</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #111;
+}
+header {
+  background: #222;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+h1,h2,h3 {
+  margin-top: 1em;
+}
+section {
+  padding: 16px 24px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.do {
+  background: #e0f7e0;
+  border-left: 4px solid #2e7d32;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+.dont {
+  background: #ffe0e0;
+  border-left: 4px solid #c62828;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
+.checklist { background: #fff8e1; border-left: 4px solid #f9a825; padding: 12px 16px; margin: 12px 0; }
+footer { text-align: center; font-size: 14px; padding: 16px; color: #555; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Guia de Boas Práticas - Enigma Seguro</h1>
+</header>
+
+<section>
+  <h2>Boas Práticas (FAÇA)</h2>
+  <div class="do">
+    <ul>
+      <li><strong>Gerar chaves em dispositivo seguro:</strong> Gere seu par RSA/ECDSA em PC ou celular confiável, sem jailbreak/root.</li>
+      <li><strong>Trocar e verificar chaves públicas fora do app (out‑of‑band):</strong> Envie via canal seguro (pessoalmente, chamada de voz, MFA) e sempre verifique fingerprint antes de confiar.</li>
+      <li><strong>Mantenha o dispositivo atualizado:</strong> Sistema operacional, navegador e antivírus em dia.</li>
+      <li><strong>Use navegador limpo e perfil separado:</strong> Menos extensões e perfis exclusivos para criptografia.</li>
+      <li><strong>Backup seguro das chaves privadas (opcional, cifrado):</strong> Exportar apenas se cifrado com senha forte (PBKDF2/Argon2 + AES) e guardar offline.</li>
+      <li><strong>Proteja o dispositivo fisicamente:</strong> Bloqueio de tela, senha/biometria, full-disk encryption.</li>
+      <li><strong>Use conexão segura para hospedar o index.html:</strong> HTTPS + CSP.</li>
+      <li><strong>Destruição segura ao final:</strong> Limpe IndexedDB/localStorage e feche navegador se em PC público.</li>
+      <li><strong>Verifique assinatura/fingerprint nas mensagens:</strong> Confirme validade antes de confiar.</li>
+      <li><strong>Use teclado virtual quando necessário:</strong> Ajuda contra keyloggers, mas não é infalível.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>O que NÃO FAÇA</h2>
+  <div class="dont">
+    <ul>
+      <li>Não compartilhe sua chave privada.</li>
+      <li>Não confie em chaves públicas sem verificação.</li>
+      <li>Não use dispositivos comprometidos ou públicos.</li>
+      <li>Não guarde chaves privadas na nuvem sem cifrar.</li>
+      <li>Não dependa só do clipboard para segredos.</li>
+      <li>Não reutilize IVs ou altere algoritmos sem entender.</li>
+      <li>Não ignore alertas de navegador/certificados.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Checklist rápido — antes de usar (2 minutos)</h2>
+  <div class="checklist">
+    <ul>
+      <li>Gerar par de chaves em dispositivo seguro.</li>
+      <li>Exportar chave pública e enviar ao contato por canal verificado.</li>
+      <li>Receber e verificar fingerprint do contato antes de importar.</li>
+      <li>Testar com mensagem curta e verificar assinatura/descriptografia.</li>
+      <li>Fazer backup cifrado das chaves privadas (opcional).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Checklist diário / por sessão</h2>
+  <div class="checklist">
+    <ul>
+      <li>Bloquear tela ao ausentar.</li>
+      <li>Fechar abas e limpar clipboard/localStorage em PC público.</li>
+      <li>Verificar fingerprint do peer se houver mudança.</li>
+      <li>Atualizar navegador e reiniciar após patch de segurança.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Medidas avançadas (opcional)</h2>
+  <ul>
+    <li>Use hardware security module / YubiKey / Smartcard para proteger private keys.</li>
+    <li>Integre verificação de identidade via PKI/certificados.</li>
+    <li>Configure CSP, SRI e sirva via HTTPS se hospedar index.html.</li>
+    <li>Para comunicação recorrente em escala, considere client+server com autenticação mútua.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>O que o app protege vs o que não protege</h2>
+  <ul>
+    <li><strong>Protege bem contra:</strong> interceptação na rede, ataques de replay e leitura de mensagens em trânsito.</li>
+    <li><strong>Não protege contra:</strong> dispositivo comprometido (malware/keylogger), acesso físico, extensões maliciosas ou divulgação de chaves por usuários.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Enigma Seguro - Boas práticas de criptografia local.</p>
+</footer>
+</body>
+</html>

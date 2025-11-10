@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔐 Enigma - Demonstração</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🔐 Enigma</h1>
+  <p>A biblioteca de criptografia moderna que protege seus dados em aplicações web, desktop e mobile.</p>
+
+  <div class="popup-buttons" role="group" aria-label="Abrir conteúdos">
+    <button class="popup-btn animated" onclick="openModal('Imagem do Enigma.png', 'Imagem do Programa')">
+      Imagem do Programa
+    </button>
+
+    <button class="popup-btn animated" onclick="openModal('boas práticas de usabilidade e segurança.html', 'Usabilidade e segurança')">
+      Usabilidade e segurança
+    </button>
+
+    <button class="popup-btn animated" onclick="openModal('checklist interativo.html', 'Checklist interativo')">
+      Checklist interativo
+    </button>
+  </div>
+</header>
+<main>
+  <h2>Por que a segurança importa</h2>
+  <p>Em um mundo cada vez mais digital, proteger informações sensíveis não é apenas recomendado, é essencial. O Enigma utiliza padrões modernos de criptografia para garantir que seus dados permaneçam seguros mesmo frente aos computadores mais poderosos disponíveis hoje.</p>
+  <div class="info-box">
+    <p><span class="highlight">RSA-OAEP 4096 bits:</span> estima-se que levaria bilhões de anos para ser descriptografado com supercomputadores atuais.</p>
+    <p><span class="highlight">ECDSA P-256:</span> assinatura digital segura para autenticação e verificação de integridade.</p>
+  </div>
+
+  <h2>Recursos Principais</h2>
+  <ul>
+    <li>RSA-OAEP 4096 para encriptação e decriptação ultra-segura</li>
+    <li>ECDSA P-256 para assinatura e verificação de mensagens</li>
+    <li>Armazenamento seguro: chaves públicas no localStorage, privadas no IndexedDB (não exportáveis)</li>
+    <li>Compatível com desktop e mobile</li>
+    <li>Fácil integração em qualquer projeto web</li>
+  </ul>
+
+  <h2>Benefícios de usar o enigma</h2>
+  <ul>
+    <li>Protege dados contra ataques modernos de força bruta</li>
+    <li>Evita exposição de informações confidenciais</li>
+    <li>Permite construir aplicativos de confiança para seus usuários</li>
+    <li>Reduz riscos legais e de reputação associados a vazamento de dados</li>
+  </ul>
+
+  <h2>Como Adquirir</h2>
+  <p>Ao adquirir (pagamento único de R$ 299,99), você terá acesso ao programa completo, garantindo a privacidade que precisa. Enviaremos o arquivo em até 24 horas após a confirmação do pagamento. Verifique todas as suas dúvidas antes de comprar, pois não haverá devolução em caso de desistência.</p>
+  <a href="https://link.mercadopago.com.br/abrindoportas" class="button">Comprar</a>
+
+  <div class="demo">
+    <h2>Demonstração Interativa</h2>
+    <p>Digite um texto, clique em "Encriptar", depois em "Decriptar" para ver como a criptografia protege sua informação:</p>
+    <label for="plaintext">Texto Original:</label>
+    <textarea id="plaintext" rows="3">Não vejo problema em mandar meus dados por aqui, é mais seguro.</textarea>
+
+    <button class="button" id="encryptBtn">Encriptar</button>
+
+    <label for="encrypted">Texto Encriptado:</label>
+    <textarea id="encrypted" rows="3" readonly></textarea>
+
+    <button class="button" id="decryptBtn">Decriptar</button>
+
+    <label for="decrypted">Texto Decriptado:</label>
+    <textarea id="decrypted" rows="3" readonly></textarea>
+  </div>
+</main>
+
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal" role="document">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Conteúdo</div>
+      <button class="modal-close" aria-label="Fechar" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
